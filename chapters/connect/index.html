@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Part I · Connect &#8212; Heuristix Data Science Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7a5d6ee2" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/connect/index';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Import Data" href="import-data.html" />
+    <link rel="prev" title="Heuristix Data Science Textbook" href="../../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Heuristix Data Science Textbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Heuristix Data Science Textbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I · Connect — Getting Data In &amp; Out</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Part I · Connect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-data.html">Import Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export-data.html">Export Data</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II · Explore — Shaping &amp; Transforming Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../explore/index.html">Part II · Explore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/join.html">Join</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/stack.html">Stack</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../explore/multi-stack.html">Multi Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/filter-rows.html">Filter Rows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/pivot.html">Pivot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/clone.html">Clone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/split.html">Split</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/explode.html">Explode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/union.html">Union</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/append.html">Append</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/aggregate.html">Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/interaction.html">Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/ratio.html">Ratio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/date-features.html">Date Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/summarize-data.html">Summarize Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/formula.html">Formula</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/rename.html">Rename</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../explore/sort.html">Sort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/deduplicate.html">Deduplicate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/drop-features.html">Drop Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/fill-missing.html">Fill Missing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/missing-imputation.html">Missing Imputation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/type-cast.html">Type Cast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/assign-unique-id.html">Assign Unique ID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/fixed-value.html">Fixed Value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/extract-substrings.html">Extract Substrings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/replace-values.html">Replace Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/select-columns.html">Select Columns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/window-features.html">Window Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/conditional-features.html">Conditional Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/value-mapping.html">Value Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/collapse.html">Collapse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/padding.html">Padding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/cleansing.html">Cleansing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/observation-window.html">Observation Window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/trend-recipe.html">Trend Recipe</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../explore/shift.html">Shift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/performance-window.html">Performance Window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/event-target.html">Event Target</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/pyspark.html">PySpark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/text-features.html">Text Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/analyze-sentiment.html">Analyze Sentiment</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../explore/generate-synthetic-data.html">Generate Synthetic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explore/match-records.html">Match Records</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../explore/bin-features.html">Bin Features</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../explore/select-features.html">Select Features</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part III · Understand — Statistical Analysis &amp; Profiling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../understand/index.html">Part III · Understand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/profile-data.html">Profile Data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../understand/detect-drift.html">Detect Drift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/ensemble-compete.html">Ensemble Compete</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/identify-segments.html">Identify Segments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/analyze-trend.html">Analyze Trend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/detect-anomaly.html">Detect Anomaly</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../understand/test-hypothesis.html">Test Hypothesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/validate-model.html">Validate Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/compress-features.html">Compress Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/visualise-clusters.html">Visualise Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/long-run-relationship.html">Long-Run Relationship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/model-rare-events.html">Model Rare Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/group-effects.html">Group Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/decompose-trends.html">Decompose Trends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/find-latent-factors.html">Find Latent Factors</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../understand/resample-confidence.html">Resample Confidence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/analyse-networks.html">Analyse Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/check-fairness.html">Check Fairness</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/decompose-cycle.html">Decompose Cycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/correct-for-trends.html">Correct for Trends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/find-co-occurrences.html">Find Co-occurrences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/detect-change-points.html">Detect Change Points</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../understand/analyse-geography.html">Analyse Geography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/survival-curves.html">Survival Curves</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../understand/measure-correlation.html">Measure Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/model-elasticity.html">Model Elasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/map-dependencies.html">Map Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/model-distribution.html">Model Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/find-hidden-groups.html">Find Hidden Groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/power-analysis.html">Power Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understand/run-meta-analysis.html">Run Meta-Analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part IV · Predict — Machine Learning &amp; Forecasting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../predict/index.html">Part IV · Predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/predict.html">Predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/forecast.html">Forecast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/score.html">Score</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/estimate-propensity.html">Estimate Propensity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/model-a-value.html">Model a Value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/linear-regression.html">Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/polynomial-regression.html">Polynomial Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/lstm.html">LSTM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/time-to-event.html">Time to Event</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../predict/track-groups.html">Track Groups</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../predict/combine-predictors.html">Combine Predictors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/classify-records.html">Classify Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/deep-learning.html">Deep Learning</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../predict/find-similar.html">Find Similar</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../predict/estimate-uncertainty.html">Estimate Uncertainty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/explain-predictions.html">Explain Predictions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../predict/tune-model.html">Tune Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/validate-reliability.html">Validate Reliability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/uplift-model.html">Uplift Model</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../predict/recommend.html">Recommend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/forecast-with-drivers.html">Forecast with Drivers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/structural-break.html">Structural Break</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/state-space.html">State Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/smart-forecast.html">Smart Forecast</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../predict/detect-regimes.html">Detect Regimes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/find-best-model.html">Find Best Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/balance-classes.html">Balance Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/calibrate-predictions.html">Calibrate Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/model-response-curve.html">Model Response Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/generalised-estimation.html">Generalised Estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/model-event-counts.html">Model Event Counts</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../predict/model-volatility.html">Model Volatility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/gaussian-process.html">Gaussian Process</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../predict/rank-items.html">Rank Items</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../predict/estimate-lifetime-value.html">Estimate Lifetime Value</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../predict/ordinal-outcome.html">Ordinal Outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/detect-time-anomaly.html">Detect Time Anomaly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/conformal-predict.html">Conformal Predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/hierarchical-forecasting.html">Hierarchical Forecasting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/nowcast.html">Nowcast</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../predict/zero-inflated-model.html">Zero-Inflated Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../predict/score-anomalies.html">Score Anomalies</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Decide — Decision Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../decide/index.html">Part V · Decide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decide/decision-rule.html">Decision Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decide/scenario.html">Scenario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decide/scenario-analysis.html">Scenario Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decide/optimise.html">Optimise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decide/prioritise.html">Prioritise</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../decide/simulate-risk.html">Simulate Risk</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../decide/design-experiment.html">Design Experiment</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../decide/run-bandit-test.html">Run Bandit Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decide/optimise-portfolio.html">Optimise Portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decide/quantify-risk.html">Quantify Risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decide/control-chart.html">Control Chart</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../decide/model-transitions.html">Model Transitions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Explain — Causal Analysis &amp; Interpretation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../explain/index.html">Part VI · Explain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/driver-analysis.html">Driver Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/attribution.html">Attribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/compare.html">Compare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/prove-causation.html">Prove Causation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/test-causation.html">Test Causation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/counterfactual-analysis.html">Counterfactual Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/cutoff-impact.html">Cutoff Impact</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../explain/measure-impact.html">Measure Impact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/remove-confounding.html">Remove Confounding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/match-groups.html">Match Groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/correct-selection-bias.html">Correct Selection Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/discover-causal-structure.html">Discover Causal Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/event-study.html">Event Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/build-synthetic-control.html">Build Synthetic Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/attribute-marketing-spend.html">Attribute Marketing Spend</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../explain/spatial-regression.html">Spatial Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/dynamic-panel.html">Dynamic Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/interrupted-time-series.html">Interrupted Time Series</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../explain/trace-effect-over-time.html">Trace Effect Over Time</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../explain/heterogeneous-effects.html">Heterogeneous Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/unpack-the-pathway.html">Unpack the Pathway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/moderation-analysis.html">Moderation Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explain/visualize.html">Visualize</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VII · Augment — AI &amp; Language Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../augment/index.html">Part VII · Augment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../augment/llm-transform.html">LLM Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../augment/encode-meaning.html">Encode Meaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../augment/vector-search.html">Vector Search</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../augment/ask-your-data.html">Ask Your Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../augment/discover-topics.html">Discover Topics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../augment/extract-entities.html">Extract Entities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../augment/classify-text.html">Classify Text</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../augment/fine-tune-model.html">Fine-tune Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../augment/manage-prompts.html">Manage Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../augment/evaluate-ai-output.html">Evaluate AI Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../augment/extract-structure.html">Extract Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../augment/analyse-images.html">Analyse Images</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../augment/summarise-text.html">Summarise Text</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../augment/analyse-documents.html">Analyse Documents</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VIII · Act — Operationalising Results</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../act/index.html">Part VIII · Act</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../act/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../act/alert.html">Alert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../act/report.html">Report</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Part I · Connect</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapters-in-this-part">Chapters in This Part</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key Concepts</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="part-i-connect">
+<h1>Part I · Connect<a class="headerlink" href="#part-i-connect" title="Link to this heading">#</a></h1>
+<p><strong>Getting data in and out of the Heuristix platform.</strong></p>
+<p>The Connect stage is where every workflow begins. Before any analysis, transformation, or modelling can take place, data must be loaded into the system. The Connect nodes handle this — reading from files, databases, APIs, and streams, and writing results back out when the workflow is complete.</p>
+<section id="chapters-in-this-part">
+<h2>Chapters in This Part<a class="headerlink" href="#chapters-in-this-part" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Node</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="import-data.html"><span class="doc std std-doc">Import Data</span></a></p></td>
+<td><p>Load CSV, Excel, Parquet, JSON, and database tables into a workflow</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="export-data.html"><span class="doc std std-doc">Export Data</span></a></p></td>
+<td><p>Write results to files, databases, or cloud storage</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="key-concepts">
+<h2>Key Concepts<a class="headerlink" href="#key-concepts" title="Link to this heading">#</a></h2>
+<p><strong>Data formats</strong> — Heuristix supports tabular data (CSV, Excel, Parquet, database tables), semi-structured data (JSON, XML), and binary formats. Understanding the strengths and limitations of each format is essential for building efficient pipelines.</p>
+<p><strong>Schema inference</strong> — When loading data, Heuristix automatically infers column types. Understanding how type inference works — and when to override it — is covered in each node’s chapter.</p>
+<p><strong>Data volume</strong> — The Connect nodes are designed to handle everything from small files (thousands of rows) to large-scale datasets (millions of rows with appropriate backend configuration). Performance considerations are discussed in each chapter.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/connect"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Heuristix Data Science Textbook</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="import-data.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Import Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapters-in-this-part">Chapters in This Part</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key Concepts</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Heuristix
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
