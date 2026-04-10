@@ -1,0 +1,636 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Heuristix Data Science Textbook &#8212; Heuristix Data Science Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=7a5d6ee2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=c73c0f3e"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'home';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Heuristix Data Science Textbook" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Heuristix Data Science Textbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Heuristix Data Science Textbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I · Connect — Getting Data In &amp; Out</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/connect/index.html">Part I · Connect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/connect/import-data.html">Import Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/connect/export-data.html">Export Data</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II · Explore — Shaping &amp; Transforming Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/index.html">Part II · Explore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/join.html">Join</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/stack.html">Stack</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/multi-stack.html">Multi Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/filter-rows.html">Filter Rows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/pivot.html">Pivot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/clone.html">Clone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/split.html">Split</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/explode.html">Explode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/union.html">Union</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/append.html">Append</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/aggregate.html">Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/interaction.html">Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/ratio.html">Ratio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/date-features.html">Date Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/summarize-data.html">Summarize Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/formula.html">Formula</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/rename.html">Rename</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/sort.html">Sort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/deduplicate.html">Deduplicate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/drop-features.html">Drop Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/fill-missing.html">Fill Missing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/missing-imputation.html">Missing Imputation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/type-cast.html">Type Cast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/assign-unique-id.html">Assign Unique ID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/fixed-value.html">Fixed Value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/extract-substrings.html">Extract Substrings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/replace-values.html">Replace Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/select-columns.html">Select Columns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/window-features.html">Window Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/conditional-features.html">Conditional Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/value-mapping.html">Value Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/collapse.html">Collapse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/padding.html">Padding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/cleansing.html">Cleansing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/observation-window.html">Observation Window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/trend-recipe.html">Trend Recipe</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/shift.html">Shift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/performance-window.html">Performance Window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/event-target.html">Event Target</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/pyspark.html">PySpark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/text-features.html">Text Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/analyze-sentiment.html">Analyze Sentiment</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/generate-synthetic-data.html">Generate Synthetic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/match-records.html">Match Records</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/bin-features.html">Bin Features</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/explore/select-features.html">Select Features</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part III · Understand — Statistical Analysis &amp; Profiling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/index.html">Part III · Understand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/profile-data.html">Profile Data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/detect-drift.html">Detect Drift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/ensemble-compete.html">Ensemble Compete</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/identify-segments.html">Identify Segments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/analyze-trend.html">Analyze Trend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/detect-anomaly.html">Detect Anomaly</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/test-hypothesis.html">Test Hypothesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/validate-model.html">Validate Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/compress-features.html">Compress Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/visualise-clusters.html">Visualise Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/long-run-relationship.html">Long-Run Relationship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/model-rare-events.html">Model Rare Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/group-effects.html">Group Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/decompose-trends.html">Decompose Trends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/find-latent-factors.html">Find Latent Factors</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/resample-confidence.html">Resample Confidence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/analyse-networks.html">Analyse Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/check-fairness.html">Check Fairness</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/decompose-cycle.html">Decompose Cycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/correct-for-trends.html">Correct for Trends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/find-co-occurrences.html">Find Co-occurrences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/detect-change-points.html">Detect Change Points</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/analyse-geography.html">Analyse Geography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/survival-curves.html">Survival Curves</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/measure-correlation.html">Measure Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/model-elasticity.html">Model Elasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/map-dependencies.html">Map Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/model-distribution.html">Model Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/find-hidden-groups.html">Find Hidden Groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/power-analysis.html">Power Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/understand/run-meta-analysis.html">Run Meta-Analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part IV · Predict — Machine Learning &amp; Forecasting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/index.html">Part IV · Predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/predict.html">Predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/forecast.html">Forecast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/score.html">Score</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/estimate-propensity.html">Estimate Propensity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/model-a-value.html">Model a Value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/linear-regression.html">Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/polynomial-regression.html">Polynomial Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/lstm.html">LSTM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/time-to-event.html">Time to Event</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/track-groups.html">Track Groups</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/combine-predictors.html">Combine Predictors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/classify-records.html">Classify Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/deep-learning.html">Deep Learning</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/find-similar.html">Find Similar</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/estimate-uncertainty.html">Estimate Uncertainty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/explain-predictions.html">Explain Predictions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/tune-model.html">Tune Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/validate-reliability.html">Validate Reliability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/uplift-model.html">Uplift Model</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/recommend.html">Recommend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/forecast-with-drivers.html">Forecast with Drivers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/structural-break.html">Structural Break</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/state-space.html">State Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/smart-forecast.html">Smart Forecast</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/detect-regimes.html">Detect Regimes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/find-best-model.html">Find Best Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/balance-classes.html">Balance Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/calibrate-predictions.html">Calibrate Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/model-response-curve.html">Model Response Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/generalised-estimation.html">Generalised Estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/model-event-counts.html">Model Event Counts</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/model-volatility.html">Model Volatility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/gaussian-process.html">Gaussian Process</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/rank-items.html">Rank Items</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/estimate-lifetime-value.html">Estimate Lifetime Value</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/ordinal-outcome.html">Ordinal Outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/detect-time-anomaly.html">Detect Time Anomaly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/conformal-predict.html">Conformal Predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/hierarchical-forecasting.html">Hierarchical Forecasting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/nowcast.html">Nowcast</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/zero-inflated-model.html">Zero-Inflated Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/predict/score-anomalies.html">Score Anomalies</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Decide — Decision Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/decide/index.html">Part V · Decide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/decide/decision-rule.html">Decision Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/decide/scenario.html">Scenario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/decide/scenario-analysis.html">Scenario Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/decide/optimise.html">Optimise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/decide/prioritise.html">Prioritise</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/decide/simulate-risk.html">Simulate Risk</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/decide/design-experiment.html">Design Experiment</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/decide/run-bandit-test.html">Run Bandit Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/decide/optimise-portfolio.html">Optimise Portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/decide/quantify-risk.html">Quantify Risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/decide/control-chart.html">Control Chart</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/decide/model-transitions.html">Model Transitions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Explain — Causal Analysis &amp; Interpretation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/index.html">Part VI · Explain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/driver-analysis.html">Driver Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/attribution.html">Attribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/compare.html">Compare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/prove-causation.html">Prove Causation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/test-causation.html">Test Causation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/counterfactual-analysis.html">Counterfactual Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/cutoff-impact.html">Cutoff Impact</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/measure-impact.html">Measure Impact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/remove-confounding.html">Remove Confounding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/match-groups.html">Match Groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/correct-selection-bias.html">Correct Selection Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/discover-causal-structure.html">Discover Causal Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/event-study.html">Event Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/build-synthetic-control.html">Build Synthetic Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/attribute-marketing-spend.html">Attribute Marketing Spend</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/spatial-regression.html">Spatial Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/dynamic-panel.html">Dynamic Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/interrupted-time-series.html">Interrupted Time Series</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/trace-effect-over-time.html">Trace Effect Over Time</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/heterogeneous-effects.html">Heterogeneous Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/unpack-the-pathway.html">Unpack the Pathway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/moderation-analysis.html">Moderation Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/explain/visualize.html">Visualize</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VII · Augment — AI &amp; Language Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/index.html">Part VII · Augment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/llm-transform.html">LLM Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/encode-meaning.html">Encode Meaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/vector-search.html">Vector Search</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/ask-your-data.html">Ask Your Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/discover-topics.html">Discover Topics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/extract-entities.html">Extract Entities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/classify-text.html">Classify Text</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/fine-tune-model.html">Fine-tune Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/manage-prompts.html">Manage Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/evaluate-ai-output.html">Evaluate AI Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/extract-structure.html">Extract Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/analyse-images.html">Analyse Images</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/summarise-text.html">Summarise Text</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/augment/analyse-documents.html">Analyse Documents</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VIII · Act — Operationalising Results</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/act/index.html">Part VIII · Act</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/act/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/act/alert.html">Alert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/act/report.html">Report</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Heuristix Data Science Textbook</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="heuristix-data-science-textbook">
+<h1>Heuristix Data Science Textbook<a class="headerlink" href="#heuristix-data-science-textbook" title="Link to this heading">#</a></h1>
+<p>Redirecting to <a class="reference internal" href="intro.html"><span class="std std-doc">Introduction</span></a>…</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Heuristix Data Science Textbook</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Heuristix
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

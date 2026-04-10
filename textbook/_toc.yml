@@ -1,0 +1,222 @@
+format: jb-book
+root: home
+
+parts:
+
+  # ── Introduction ──────────────────────────────────────────────────────────
+  - caption: "Introduction"
+    chapters:
+      - file: intro
+
+  # ── Part I: Connect ───────────────────────────────────────────────────────
+  - caption: "Part I · Connect — Getting Data In & Out"
+    chapters:
+      - file: chapters/connect/index
+      - file: chapters/connect/import-data
+      - file: chapters/connect/export-data
+
+  # ── Part II: Explore ──────────────────────────────────────────────────────
+  - caption: "Part II · Explore — Shaping & Transforming Data"
+    chapters:
+      - file: chapters/explore/index
+      - file: chapters/explore/join
+      - file: chapters/explore/stack
+      - file: chapters/explore/multi-stack
+      - file: chapters/explore/filter-rows
+      - file: chapters/explore/pivot
+      - file: chapters/explore/clone
+      - file: chapters/explore/split
+      - file: chapters/explore/explode
+      - file: chapters/explore/union
+      - file: chapters/explore/append
+      - file: chapters/explore/aggregate
+      - file: chapters/explore/interaction
+      - file: chapters/explore/ratio
+      - file: chapters/explore/date-features
+      - file: chapters/explore/summarize-data
+      - file: chapters/explore/formula
+      - file: chapters/explore/rename
+      - file: chapters/explore/sort
+      - file: chapters/explore/deduplicate
+      - file: chapters/explore/drop-features
+      - file: chapters/explore/fill-missing
+      - file: chapters/explore/missing-imputation
+      - file: chapters/explore/type-cast
+      - file: chapters/explore/assign-unique-id
+      - file: chapters/explore/fixed-value
+      - file: chapters/explore/extract-substrings
+      - file: chapters/explore/replace-values
+      - file: chapters/explore/select-columns
+      - file: chapters/explore/window-features
+      - file: chapters/explore/conditional-features
+      - file: chapters/explore/value-mapping
+      - file: chapters/explore/collapse
+      - file: chapters/explore/padding
+      - file: chapters/explore/cleansing
+      - file: chapters/explore/observation-window
+      - file: chapters/explore/trend-recipe
+      - file: chapters/explore/shift
+      - file: chapters/explore/performance-window
+      - file: chapters/explore/event-target
+      - file: chapters/explore/pyspark
+      - file: chapters/explore/text-features
+      - file: chapters/explore/analyze-sentiment
+      - file: chapters/explore/generate-synthetic-data
+      - file: chapters/explore/match-records
+      - file: chapters/explore/bin-features
+      - file: chapters/explore/select-features
+
+  # ── Part III: Understand ──────────────────────────────────────────────────
+  - caption: "Part III · Understand — Statistical Analysis & Profiling"
+    chapters:
+      - file: chapters/understand/index
+      - file: chapters/understand/profile-data
+      - file: chapters/understand/detect-drift
+      - file: chapters/understand/ensemble-compete
+      - file: chapters/understand/identify-segments
+      - file: chapters/understand/analyze-trend
+      - file: chapters/understand/detect-anomaly
+      - file: chapters/understand/test-hypothesis
+      - file: chapters/understand/validate-model
+      - file: chapters/understand/compress-features
+      - file: chapters/understand/visualise-clusters
+      - file: chapters/understand/long-run-relationship
+      - file: chapters/understand/model-rare-events
+      - file: chapters/understand/group-effects
+      - file: chapters/understand/decompose-trends
+      - file: chapters/understand/find-latent-factors
+      - file: chapters/understand/resample-confidence
+      - file: chapters/understand/analyse-networks
+      - file: chapters/understand/check-fairness
+      - file: chapters/understand/decompose-cycle
+      - file: chapters/understand/correct-for-trends
+      - file: chapters/understand/find-co-occurrences
+      - file: chapters/understand/detect-change-points
+      - file: chapters/understand/analyse-geography
+      - file: chapters/understand/survival-curves
+      - file: chapters/understand/measure-correlation
+      - file: chapters/understand/model-elasticity
+      - file: chapters/understand/map-dependencies
+      - file: chapters/understand/model-distribution
+      - file: chapters/understand/find-hidden-groups
+      - file: chapters/understand/power-analysis
+      - file: chapters/understand/run-meta-analysis
+
+  # ── Part IV: Predict ──────────────────────────────────────────────────────
+  - caption: "Part IV · Predict — Machine Learning & Forecasting"
+    chapters:
+      - file: chapters/predict/index
+      - file: chapters/predict/predict
+      - file: chapters/predict/forecast
+      - file: chapters/predict/score
+      - file: chapters/predict/estimate-propensity
+      - file: chapters/predict/model-a-value
+      - file: chapters/predict/linear-regression
+      - file: chapters/predict/polynomial-regression
+      - file: chapters/predict/lstm
+      - file: chapters/predict/time-to-event
+      - file: chapters/predict/track-groups
+      - file: chapters/predict/combine-predictors
+      - file: chapters/predict/classify-records
+      - file: chapters/predict/deep-learning
+      - file: chapters/predict/find-similar
+      - file: chapters/predict/estimate-uncertainty
+      - file: chapters/predict/explain-predictions
+      - file: chapters/predict/tune-model
+      - file: chapters/predict/validate-reliability
+      - file: chapters/predict/uplift-model
+      - file: chapters/predict/recommend
+      - file: chapters/predict/forecast-with-drivers
+      - file: chapters/predict/structural-break
+      - file: chapters/predict/state-space
+      - file: chapters/predict/smart-forecast
+      - file: chapters/predict/detect-regimes
+      - file: chapters/predict/find-best-model
+      - file: chapters/predict/balance-classes
+      - file: chapters/predict/calibrate-predictions
+      - file: chapters/predict/model-response-curve
+      - file: chapters/predict/generalised-estimation
+      - file: chapters/predict/model-event-counts
+      - file: chapters/predict/model-volatility
+      - file: chapters/predict/gaussian-process
+      - file: chapters/predict/rank-items
+      - file: chapters/predict/estimate-lifetime-value
+      - file: chapters/predict/ordinal-outcome
+      - file: chapters/predict/detect-time-anomaly
+      - file: chapters/predict/conformal-predict
+      - file: chapters/predict/hierarchical-forecasting
+      - file: chapters/predict/nowcast
+      - file: chapters/predict/zero-inflated-model
+      - file: chapters/predict/score-anomalies
+
+  # ── Part V: Decide ────────────────────────────────────────────────────────
+  - caption: "Part V · Decide — Decision Intelligence"
+    chapters:
+      - file: chapters/decide/index
+      - file: chapters/decide/decision-rule
+      - file: chapters/decide/scenario
+      - file: chapters/decide/scenario-analysis
+      - file: chapters/decide/optimise
+      - file: chapters/decide/prioritise
+      - file: chapters/decide/simulate-risk
+      - file: chapters/decide/design-experiment
+      - file: chapters/decide/run-bandit-test
+      - file: chapters/decide/optimise-portfolio
+      - file: chapters/decide/quantify-risk
+      - file: chapters/decide/control-chart
+      - file: chapters/decide/model-transitions
+
+  # ── Part VI: Explain ──────────────────────────────────────────────────────
+  - caption: "Part VI · Explain — Causal Analysis & Interpretation"
+    chapters:
+      - file: chapters/explain/index
+      - file: chapters/explain/driver-analysis
+      - file: chapters/explain/attribution
+      - file: chapters/explain/compare
+      - file: chapters/explain/prove-causation
+      - file: chapters/explain/test-causation
+      - file: chapters/explain/counterfactual-analysis
+      - file: chapters/explain/cutoff-impact
+      - file: chapters/explain/measure-impact
+      - file: chapters/explain/remove-confounding
+      - file: chapters/explain/match-groups
+      - file: chapters/explain/correct-selection-bias
+      - file: chapters/explain/discover-causal-structure
+      - file: chapters/explain/event-study
+      - file: chapters/explain/build-synthetic-control
+      - file: chapters/explain/attribute-marketing-spend
+      - file: chapters/explain/spatial-regression
+      - file: chapters/explain/dynamic-panel
+      - file: chapters/explain/interrupted-time-series
+      - file: chapters/explain/trace-effect-over-time
+      - file: chapters/explain/heterogeneous-effects
+      - file: chapters/explain/unpack-the-pathway
+      - file: chapters/explain/moderation-analysis
+      - file: chapters/explain/visualize
+
+  # ── Part VII: Augment ─────────────────────────────────────────────────────
+  - caption: "Part VII · Augment — AI & Language Intelligence"
+    chapters:
+      - file: chapters/augment/index
+      - file: chapters/augment/llm-transform
+      - file: chapters/augment/encode-meaning
+      - file: chapters/augment/vector-search
+      - file: chapters/augment/ask-your-data
+      - file: chapters/augment/discover-topics
+      - file: chapters/augment/extract-entities
+      - file: chapters/augment/classify-text
+      - file: chapters/augment/fine-tune-model
+      - file: chapters/augment/manage-prompts
+      - file: chapters/augment/evaluate-ai-output
+      - file: chapters/augment/extract-structure
+      - file: chapters/augment/analyse-images
+      - file: chapters/augment/summarise-text
+      - file: chapters/augment/analyse-documents
+
+  # ── Part VIII: Act ────────────────────────────────────────────────────────
+  - caption: "Part VIII · Act — Operationalising Results"
+    chapters:
+      - file: chapters/act/index
+      - file: chapters/act/schedule
+      - file: chapters/act/alert
+      - file: chapters/act/report

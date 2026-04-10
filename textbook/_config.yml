@@ -1,0 +1,49 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# Heuristix Data Science Textbook — Jupyter Book Configuration
+# ══════════════════════════════════════════════════════════════════════════════
+title: "Heuristix Data Science Textbook"
+author: "Heuristix"
+copyright: "2026"
+logo: _static/logo.png
+
+only_build_toc_files: true
+
+# Execution — chapters are pre-written markdown, not executed notebooks
+execute:
+  execute_notebooks: "off"
+
+# HTML theme
+html:
+  use_repository_button: false
+  use_issues_button: false
+  use_edit_page_button: false
+  home_page_in_navbar: true
+  navbar_number_sections: false
+  extra_navbar: ""
+  extra_footer: |
+    <p style="text-align:center;font-size:0.85rem;color:#94a3b8;">
+      © 2026 Heuristix · Professional Data Science Platform &amp; Academy ·
+      <a href="https://heuristix.io" style="color:#3b82f6;">heuristix.io</a>
+    </p>
+
+# LaTeX / PDF output
+latex:
+  latex_engine: pdflatex
+  use_jupyterbook_latex: true
+
+# Sphinx configuration
+sphinx:
+  config:
+    html_show_sourcelink: false
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    html_static_path: ["_static"]
+    html_css_files:
+      - custom.css
+    html_theme_options:
+      show_navbar_depth: 2
+      show_toc_level: 3
+      navigation_with_keys: true
+      logo_only: false
+      repository_url: ""
+      use_download_button: false
+  extra_extensions: []
