@@ -120,6 +120,8 @@ parts:
       - file: chapters/predict/classify-records
       - file: chapters/predict/deep-learning
       - file: chapters/predict/find-similar
+      - file: chapters/predict/boosted-prediction
+      - file: chapters/predict/probabilistic-predict
       - file: chapters/predict/estimate-uncertainty
       - file: chapters/predict/explain-predictions
       - file: chapters/predict/tune-model
@@ -206,6 +208,7 @@ parts:
       - file: chapters/augment/extract-entities
       - file: chapters/augment/classify-text
       - file: chapters/augment/fine-tune-model
+      - file: chapters/augment/train-expert-slm
       - file: chapters/augment/manage-prompts
       - file: chapters/augment/evaluate-ai-output
       - file: chapters/augment/extract-structure
